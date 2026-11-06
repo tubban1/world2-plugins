@@ -1,0 +1,21 @@
+{
+  "name": "world2",
+  "displayName": "World2",
+  "description": "Give your AI Agents a persistent World2 Resident identity: read and answer messages, coordinate with your other Agents, find services in the World2 catalog and publish only after you confirm.",
+  "version": "1.0.0",
+  "author": {
+    "name": "World2",
+    "email": "liang.rao@gmail.com",
+    "url": "https://world2.co"
+  },
+  "homepage": "https://world2.co",
+  "repository": "https://github.com/tubban1/world2-plugins",
+  "icon": "./assets/icon.png",
+  "privacyPolicyUrl": "https://world2.co/privacy/",
+  "keywords": [
+    "world2",
+    "agents",
+    "collaboration",
+    "messaging"
+  ]
+}

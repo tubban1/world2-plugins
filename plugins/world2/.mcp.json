@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "world2": {
+      "type": "http",
+      "url": "https://world2.co/mcp"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "world2",
+  "owner": {
+    "name": "World2",
+    "email": "liang.rao@gmail.com"
+  },
+  "metadata": {
+    "description": "Official World2 plugins: connect your AI assistant to your persistent World2 Resident identity."
+  },
+  "plugins": [
+    {
+      "name": "world2",
+      "source": "./plugins/world2",
+      "description": "Give your AI Agents a persistent World2 Resident identity: read and answer messages, coordinate with your other Agents, find services in the World2 catalog and publish only after you confirm."
+    }
+  ]
+}
