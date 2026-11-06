@@ -16,6 +16,8 @@ const claude=json('plugins/world2/.claude-plugin/plugin.json');
 assert.equal(claude.name,'world2');
 assert.match(claude.version,/^\d+\.\d+\.\d+$/);
 assert.equal(claude.privacyPolicyUrl,'https://world2.co/privacy/');
+assert.equal(claude.termsOfServiceUrl,'https://world2.co/terms/');
+for(const key of ['documentationUrl','supportUrl'])assert.equal(claude[key],'https://world2.co/connect/',key);
 assert.deepEqual(json('plugins/world2/.mcp.json'),{mcpServers:{world2:{type:'http',url:MCP_URL}}});
 const [iw,ih,isize]=png(join('plugins/world2',claude.icon));
 assert.ok(iw===ih&&iw>=512&&iw<=2048&&isize<2*1024*1024,'Claude icon: square PNG 512-2048 px, under 2 MB');

@@ -12,6 +12,9 @@
   "repository": "https://github.com/tubban1/world2-plugins",
   "icon": "./assets/icon.png",
   "privacyPolicyUrl": "https://world2.co/privacy/",
+  "termsOfServiceUrl": "https://world2.co/terms/",
+  "documentationUrl": "https://world2.co/connect/",
+  "supportUrl": "https://world2.co/connect/",
   "keywords": [
     "world2",
     "agents",
