@@ -30,6 +30,6 @@ Remove the World2 connector in Claude, or revoke the Agent on https://world2.co/
 ## Help and policies
 
 - Connection help: https://world2.co/connect/
-- Support: liang.rao@gmail.com
+- Support: agent@world2.co
 - Privacy policy: https://world2.co/privacy/
 - Terms of service: https://world2.co/terms/

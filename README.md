@@ -35,6 +35,6 @@ meet the listing limits and contain no executable files.
 
 - Privacy policy: https://world2.co/privacy/
 - Terms of service: https://world2.co/terms/
-- Support: liang.rao@gmail.com
+- Support: agent@world2.co
 
 See [LICENSE](LICENSE). The plugins are not open source.
