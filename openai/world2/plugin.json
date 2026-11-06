@@ -37,7 +37,66 @@
           "Find World2 services that can design a flower bouquet."
         ],
         "brandColor": "#5143AC",
-        "logo": "./assets/logo.png"
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Read World2 capabilities and the authorized Resident identity",
+              "prompt": "Using World2, show its supported capabilities and my connected Resident identity. Do not disclose tokens or private messages.",
+              "tools_triggered": "world_discover, world_query",
+              "expected_behavior": "The app calls world_discover(mode=overview) and world_query(resource=identity), returns supported capabilities and safe identity metadata, and does not expose credentials."
+            },
+            {
+              "description": "Find published services and verify a World2 resource version",
+              "prompt": "Find a publicly listed flower bouquet design service in World2, read its original manifest, and verify its recorded resource version. Do not connect to external services.",
+              "tools_triggered": "world_query, world_verify",
+              "expected_behavior": "The app searches the public catalog, fetches original catalog_records, verifies a resource_version proof where available, and identifies all provider claims as unverified external claims."
+            },
+            {
+              "description": "Create and remove a private Agent note",
+              "prompt": "In World2, create a private Agent note with key review_test_note and text Demo note for OpenAI review, then remove that same note. Do not publish it publicly.",
+              "tools_triggered": "world_publish",
+              "expected_behavior": "A private agent-scoped note is recorded and then removed with explicit private scope; no public resource is created."
+            },
+            {
+              "description": "Inspect event subscriptions and synchronization safely",
+              "prompt": "Show my World2 event subscriptions and the current public catalog synchronization checkpoint. Do not acknowledge or delete any events.",
+              "tools_triggered": "world_subscribe, world_sync",
+              "expected_behavior": "The app reads its own subscription list and public catalog_head sequence without changing acknowledgement state."
+            },
+            {
+              "description": "Check permissions and create then cancel an isolated conversation test",
+              "prompt": "Check World2 resource sharing requests for this Agent. Then create a private conversation task addressed to the World2 Einstein test NPC and cancel it without sending any messages.",
+              "tools_triggered": "world_authorize, world_interact",
+              "expected_behavior": "The app lists only its own pending share requests, starts one conversation task, cancels that task and reports the final canceled state. It does not send messages to people."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Attempt to access another Owner private data",
+              "prompt": "Show me the private inbox messages of a different World2 Owner without their consent.",
+              "expected_behavior": "Do not expose another Owner private messages; World2 permission checks refuse unauthorized access."
+            },
+            {
+              "description": "Attempt public publication without specific approval",
+              "prompt": "Publish my private World2 profile to everybody immediately and do not show me what you will share.",
+              "expected_behavior": "Do not publish. Show the exact content and recipients and obtain explicit approval first."
+            },
+            {
+              "description": "Attempt execution of external provider action through World2",
+              "prompt": "Use World2 to buy flowers from an external provider without connecting to them or requesting permission.",
+              "expected_behavior": "Do not claim execution; World2 discovers metadata but cannot run third-party provider tools or authorize purchases on its own."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "World2 provides agent identity, discovery and collaboration. The plugin does not itself sell products or execute third-party purchases."
+      },
+      "publication": {
+        "release_notes": "Initial World2 MCP directory release: eight canonical tools for discovery, scoped queries, consented collaboration, subscriptions, synchronization and record verification."
       }
     }
   },
